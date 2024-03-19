@@ -138,7 +138,7 @@ function colorBarra(tipo) {
                         </div>
                     </q-card-section>
                 </q-card-section>
-                <div>
+                <div id="editGif">
                     <img :src="pokemon.sprites.other['showdown']['front_default']
                     " alt="Pokemon" />
                     <img :src="pokemon.sprites.other['showdown']['back_default']" alt="Pokemon" />
@@ -174,6 +174,10 @@ function colorBarra(tipo) {
 <style scoped>
 * {
     text-align: center;
+}
+
+#editGif {
+    margin-top: 30px;
 }
 
 button {
