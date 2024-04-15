@@ -9,16 +9,12 @@ import { ref } from 'vue'
             <q-toolbar>
                 <q-fab id="circuloDesplegable" color="dark items-center" icon="keyboard_arrow_right" direction="down">
                 <router-link to="/" class="router">
-                    <img src="./img/casa.png" alt="pokemon icono" style="width: 40px;">
-                    <p id="p0">Inicio</p>
-                </router-link>
-                <router-link to="/" class="router">
                     <img src="./img/juegos.png" alt="pokemon icono" style="width: 40px;">
-                    <p id="p1">Pokedex</p>
+                    <p id="p0">Pokedex</p>
                 </router-link>
                 <router-link to="/adivinaPokemon" class="router">
                     <img src="./img/avatar.png" alt="pokemon icono" style="width: 40px;">
-                    <p id="p2">Adivina El Pokemon</p>
+                    <p id="p1">Adivina El Pokemon</p>
                 </router-link>
             </q-fab>
                 <q-toolbar-title class="row float-left">
@@ -61,20 +57,21 @@ import { ref } from 'vue'
 
 #p1 {
     position: absolute;
+    width: 180px;
     left: 3.5rem;
     top: 3.1rem;
     font-size: 20px;
     mix-blend-mode: difference;
 }
 
-#p2 {
+/* #p1 {
     position: absolute;
-    width: 180px;
+    
     left: 3.5rem;
     top: 5.5rem;
     font-size: 20px;
     mix-blend-mode: difference;
-}
+} */
 
 #contenido {
     height: 100vh;
