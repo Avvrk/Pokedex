@@ -7,7 +7,7 @@ import { Notify } from "quasar";
 
 const mostrarNotificacion = () => {
   Notify.create({
-    message: 'Something went wrong',
+    message: 'No, try again',
     color: 'negative',
     position: 'bottom',
     timeout: 2500,
