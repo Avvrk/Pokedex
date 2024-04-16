@@ -3,6 +3,17 @@ import { ref } from "vue";
 import axios from "axios";
 import confetti from "canvas-confetti";
 
+import { Notify } from "quasar";
+
+const mostrarNotificacion = () => {
+  Notify.create({
+    message: 'Something went wrong',
+    color: 'negative',
+    position: 'bottom',
+    timeout: 2500,
+  })
+}
+
 let pokemon = ref([]);
 let respuesta = ref("");
 let adivino = ref("no");
@@ -101,7 +112,7 @@ function colorBarra(tipo) {
 }
 
 function lanzarConfeti() {
-	let duracion = 15 * 1000;
+	let duracion = 6 * 1000;
 	let finAnimacion = Date.now() + duracion;
 	let inclinacion = 1;
 
@@ -146,9 +157,8 @@ function verificar() {
 	if (respuesta.value.toLowerCase() == pokemon.value.name) {
 		adivino.value = "si";
 		lanzarConfeti();
-		console.log("Si es");
 	} else {
-		console.log("No es");
+		mostrarNotificacion();
 	}
 }
 </script>
@@ -257,6 +267,7 @@ input {
 	font-family: inherit;
 	background-color: #1a1a1a;
 	cursor: pointer;
+	color: #ffffff;
 }
 
 input:focus,

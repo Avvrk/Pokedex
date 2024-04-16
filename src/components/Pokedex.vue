@@ -7,10 +7,17 @@ let pokemonEnTexto = ref('');
 
 let mostrar = ref(false);
 
+let nombreAnterio = ref('')
+
 async function traerPokemon(id_o_nombre) {
     try {
+        if (id_o_nombre != '') {
+            nombreAnterio.value = id_o_nombre;
+        }
         let url;
-        if (parseInt(id_o_nombre) === id_o_nombre) {
+        if (id_o_nombre == '') {
+            url = `https://pokeapi.co/api/v2/pokemon/${nombreAnterio.value}`
+        } else if (parseInt(id_o_nombre) === id_o_nombre) {
             url = `https://pokeapi.co/api/v2/pokemon/${id_o_nombre}`
         } else {
             url = `https://pokeapi.co/api/v2/pokemon/${id_o_nombre.toLowerCase()}`
@@ -172,6 +179,7 @@ function colorBarra(tipo) {
     height: 100%;
     gap: 50px;
     z-index: 2;
+    background-color: #242424;
 }
 
 #cositasHeader {
@@ -199,8 +207,8 @@ function colorBarra(tipo) {
     position: absolute;
     width: 328px;
     right: 41rem;
-    opacity: 0.6;
     font-weight: 600;
+    color: #767676;
 }
 
 #editGif {
@@ -226,6 +234,7 @@ button {
 
 input {
     background-color: #000000;
+    color: #6b6b6b;
     font-size: 15px;
     font-weight: 600;
     padding: 9px 18px 9px 18px;
@@ -292,6 +301,25 @@ input {
     font-size: 16px;
     color: #353535;
     opacity: 0.8;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (max-width: 1185px) {
